@@ -7,10 +7,11 @@ $hint = "";
 // lookup all hints from array if $q is different from ""
 if ($q !== "abc123") {
   $hint = "Wrong password";
-  echo "You typed $q";
+  echo $hint;
 }
 else {
     $hint = "Welcome to the page";
+    echo $hint;
 }
 
 // Output "no suggestion" if no hint was found or output correct values
