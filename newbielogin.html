@@ -10,7 +10,7 @@
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("txtPasswordf").innerHTML = this.responseText;
+        document.getElementById("txtPassword").innerHTML = this.responseText;
       }
     };
     xmlhttp.open("GET", "newbielogin.php?login=" + str, true);
@@ -40,7 +40,7 @@
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+      <p class="underlineHover" href="#">Response from server : <span id="txtPassword></span></p>
     </div>
 
   </div>
