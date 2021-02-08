@@ -1,0 +1,49 @@
+<html>
+<head>
+<link rel="stylesheet" href="newbielogin.css">
+<script>
+  function stealPassword(str) {
+  if (str.length == 0) {
+    document.getElementById("txtPassword").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtPasswordf").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "newbielogin.php?login=" + str, true);
+    xmlhttp.send();
+  }
+}
+</script>
+</head>
+<body>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Sign In </h2>
+    <h2 class="inactive underlineHover">Sign Up </h2>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="bread.jpg" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form action="newbielogin.php">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+      <input type="text" onkeyup="stealPassword(this.value)" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
